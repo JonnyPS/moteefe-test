@@ -16,6 +16,9 @@ File.open("names.txt").each do |line|
 	}
 	# display names
 	puts sorted
+	sorted.each_with_index {
+		|val, index| puts "#{val} => #{index}" 
+	}
 
 end
 
