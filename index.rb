@@ -1,5 +1,5 @@
 names = Array.new([]);
-alphPos = Array.new(["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"])
+alphPos = Array.new(["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"])
 
 File.open("names.txt").each do |line|
 	# split the text file into individual names
@@ -16,36 +16,37 @@ File.open("names.txt").each do |line|
 	}
 	# get length of each name
 	sorted.each { |n| 
-		puts n.length
+		puts "name length = #{n.length}"
 	}
 	# display names
-	puts sorted
+	puts "names are: #{sorted}"
 
 	# get index of each name
 	sorted.each_with_index {
-		|val, index| puts "#{val} => #{index}" 
+		|val, index| puts "name index values are: #{val} => #{index}" 
 	}
+
+	# sorted.each { |n| 
+	# 	# thisName = n 
+	# 	puts n
+	# 	puts n.length
+	# 	n.split("").each do |i|
+	# 		puts i 
+	# 		# puts i.is_a?(String)
+	# 		# puts alphPos[0].include? i
+	# 		# puts i.in?(alphPos)
+	# 	end
+	# }
 
 	sorted.each { |n| 
-		thisName = n 
-		puts thisName
-		puts thisName.length
-			thisName.split("").each do |i|
-				puts i 
-			end
+		# thisName = n 
+		puts n
+		puts n[0] # Returns the first character (doh!)
+		puts "does alphPos include this letter: #{alphPos.include? n[0]}"
+			# puts i.is_a?(String)
+			# puts alphPos[0].include? i
+			# puts i.in?(alphPos)
 	}
-
-	# get individual letters
-	# sorted.each { |n| 
-		# n.split("").each do |i|
-			# puts i
-		# end
-	# }
-	# sorted.each { |n|
-	# 	n.scan /\w/
-	# 	puts n
-	# }
-
 end
 
 # get each name from text file
